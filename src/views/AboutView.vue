@@ -5,10 +5,10 @@ import personajes from "../components/personajes.vue";
 <template>
 
 <main class="mani">
-  <div>
+    <br>
     <h1>Personajes De Rick & Morty</h1>
     <personajes/>
-  </div>
+
 </main>
 
 
@@ -19,7 +19,8 @@ import personajes from "../components/personajes.vue";
 .mani{
   background-image: url("../assets/fondoo.jpg");
    background-size: cover;
-   display: inline-flex;
+
 }
+
 
 </style>
