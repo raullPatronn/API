@@ -1,15 +1,15 @@
+<script setup>
+import personajes from "../components/personajes.vue";
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <h1>Personajes del programa</h1>
+
+    <personajes />
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+
 </style>
