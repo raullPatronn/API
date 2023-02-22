@@ -4,9 +4,8 @@ import personajes from "../components/personajes.vue";
 
 <template>
   <div>
-    <h1>Personajes del programa</h1>
-
-    <personajes />
+    <h1>Personajes De Rick & Morty</h1>
+    <personajes/>
   </div>
 </template>
 

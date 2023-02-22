@@ -9,7 +9,7 @@ export default {
     return {
       info: [],
       personajes: [],
-      cont:1, 
+      cont:2, 
     }
   },
 
@@ -40,11 +40,35 @@ export default {
 </script>
 
 <template>
-  <h2>Hay {{ info.count }} personajes en el programa de Rick & Morty</h2>
-  <button @click="pag(cont)">página {{ cont }}</button>
+
+  <input type="text" v-model="search" placeholder="search" style="margin: 10px 10px 10px 10px" class="border border-black">
+
+
+  <button @click="pag(cont)" class="border border-fuchsia-900" style="margin: 10px 10px 10px 10px">Siguiente</button> 
+
   <ul>
+  <div class="caja w-96">
     <li v-for="p in personajes">
-      <a >{{ p.name }} id:{{ p.id }}</a> 
+
+    <div class="border border-black box" style="margin: 10px 10px 10px 10px">
+      <a>id-{{ p.id }}</a>
+      <br>
+      <img src="{{ p.image }}">
+      <br>
+      <a>{{ p.name }}</a>  
+    </div>
     </li>
+  </div>
+
   </ul>
+
+
 </template>
+<style>
+  .caja{
+    display: inline-block;
+  }
+  .box{
+    padding: 20px;
+  }
+</style>

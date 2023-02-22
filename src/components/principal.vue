@@ -10,7 +10,3 @@
       <br/>
   </WelcomeItem>
 </template>
-
-<style type="text/css">
-  
-</style>
