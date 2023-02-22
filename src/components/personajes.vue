@@ -53,7 +53,7 @@ export default {
     <div class="border border-black box" style="margin: 10px 10px 10px 10px">
       <a>id-{{ p.id }}</a>
       <br>
-      <img src="{{ p.image }}">
+      <img v-bind:src=" p.image " alt="">
       <br>
       <a>{{ p.name }}</a>  
     </div>
