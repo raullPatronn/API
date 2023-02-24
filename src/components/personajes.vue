@@ -1,7 +1,9 @@
-<script>
+<script type="text/javascript">
+  
 import axios from 'axios'
 
 let API_URL = `https://rickandmortyapi.com/api/character`
+
 
 export default {
 
@@ -9,8 +11,8 @@ export default {
     return {
       info: [],
       personajes: [],
-      search:'',
-      cont:2, 
+      cont:2,
+      buscar:'',
     }
   },
 
@@ -19,45 +21,55 @@ export default {
       .then((response) => {
         this.info = response.data.info;
         this.personajes = response.data.results;
+
       })
   },
 
-  methods: {
+  
+
+methods: {
     pag(num) {
       API_URL='https://rickandmortyapi.com/api/character/?page='+num
-      console.log(API_URL)
       axios.get(API_URL)
       .then((response) => {
-        console.log(response.config)
         this.info = response.data.info;
         this.personajes = response.data.results;
       })
       this.cont++
-    }
-  },
-
-  methods: {
-    buscador(search) {
-      API_URL='https://rickandmortyapi.com/api/character/?name='+search
-      console.log(API_URL)
+    },
+    buscador(buscar) {
+      API_URL='https://rickandmortyapi.com/api/character/?name='+buscar
       axios.get(API_URL)
       .then((response) => {
-        console.log(response.config)
         this.info = response.data.info;
         this.personajes = response.data.results;
       })
 
-    }
+    },
+     pagg(num) {
+      API_URL='https://rickandmortyapi.com/api/character/?page='+num
+      axios.get(API_URL)
+      .then((response) => {
+        this.info = response.data.info;
+        this.personajes = response.data.results;
+      })
+      this.cont--
+    },
   },
+
 }
+
 
 </script>
 
 <template>
 
-<input type="text" v-model="search" placeholder="search" style="margin: 10px 10px 10px 10px" class="border border-black"> <button @click="search">buscar</button>
+<input type="text" v-model="buscar" placeholder="Escribir Nombre" style="margin: 10px 10px 10px 10px" class="border border-white">
+<button @click="buscador(buscar)" class="boton bg-blue-400 text-orange-800"><b>Buscar</b></button>
+ 
 
-<button @click="pag(cont)" class="border border-fuchsia-900" style="margin: 10px 10px 10px 10px">Siguiente</button> 
+<button @click="pag(cont)" class="boton2" style="margin: 10px 10px 10px 10px">Siguiente</button> 
+<button @click="pagg(cont)" class="boton2" style="margin: 10px 10px 10px 10px">Atras</button> 
 
   <ul>
   <div class="caja w-96 text-white">
@@ -66,6 +78,7 @@ export default {
       <a class="text-xl">id-{{ d.id }}</a>
       <br>
       <div class="textoimagen">
+
       <img v-bind:src=" d.image " alt="Personajes_Rick_Morty">
 
       <div class="informacion" style="margin: 10px 10px 10px 10px">
@@ -81,6 +94,10 @@ export default {
   </ul>
 </template>
 <style>
+  .boton{
+    padding: 5px;
+    border-radius:50%;
+  }
   .textoimagen{
     display: inline-flex;
   }
