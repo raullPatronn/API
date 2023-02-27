@@ -8,7 +8,6 @@ import HelloWorld from './components/HelloWorld.vue'
   <header class="headerr">
     <div class="barra">
       <img alt="Vue logo" class="logo hover:-translate-y-1 hover:scale-110 duration-300" src="@/assets/rick.png" width="125" height="125" />
-
       <div class="wrapper">
         <nav class="cont">
           <RouterLink to="/"><p class="text-xl text-white hover:-translate-y-1 hover:scale-110 duration-300 hover:text-cyan-900">Principal</p></RouterLink>

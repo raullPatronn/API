@@ -20,7 +20,7 @@ import abajo from '../components/abajo.vue'
 
 <style>
   .mainn{
-   background-image: url("../assets/fondoo.jpg");
+   background-image: url("../assets/fondooo.jpg");
    background-size: cover;
    width: 100%;
    display: inline-flex;

@@ -10,8 +10,9 @@ export default {
     return {
       info: [],
       personajes: [],
-      current:1,
-      pages: 20,
+      siguiente:null,
+      anterior:null,
+      pagina: 1,
       buscar:'',
     };
   },
@@ -83,11 +84,20 @@ methods: {
     </li>
   </div>
   </ul>
+
+<button v-if="pagina!==1" @click="$event => navpag(pagina--)" class="boton2 bg-emerald-900 text-white" style="margin: 10px 10px 10px 10px">Anterior</button>
+
+<button v-if="pagina!==this.info.pages" @click="$event => navpag(pagina++)" class="boton2 bg-emerald-900 text-white" style="margin: 10px 10px 10px 10px">Siguiente</button>
+
 </template>
 <style>
   .boton{
     padding: 5px;
     border-radius:50%;
+  }
+  .boton2{
+    padding: 5px;
+    border-radius:10%;
   }
   .textoimagen{
     display: inline-flex;
